@@ -208,6 +208,11 @@ section h2 {
   transform: rotateY(10deg) rotateX(5deg) scale(1.05);
   box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }
+#video-destaque {
+  background-color: var(--azul-suave); /* mesmo fundo da sessão YouTube */
+  padding: 4rem 2rem;
+  text-align: center;
+}
 
 #youtube {
   background-color: var(--azul-suave);
