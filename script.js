@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function () {
   // 👉 troque só esta linha:
-  const apiKey = "AIzaSyAFsK5QnNk0Qw1g7QfFkeJSg2BgX1qxqqM";
+  const apiKey = "SuaChave";
   const channelId = "UCfbF-WRAt6paMIo-ZUDZtOA";
 
   const box = document.querySelector(".youtube-video");
