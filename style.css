@@ -364,6 +364,9 @@ footer {
     z-index: 100;
   }
 
+  .nav-links {
+    background: #f9c5d1;
+  }
   nav ul.show {
     display: flex;
   }
