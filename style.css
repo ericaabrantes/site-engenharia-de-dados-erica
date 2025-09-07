@@ -484,3 +484,26 @@ footer {
 
 
 
+/* Ajuste só para telas menores */
+@media (max-width: 768px) {
+  #video-destaque .youtube-video-destaque iframe {
+    width: 100% !important;  /* ocupa a largura disponível */
+    height: auto;            /* deixa o navegador calcular */
+    aspect-ratio: 16/9;      /* mantém proporção sem vazar */
+  }
+}
+@media (max-width: 768px) {
+  .hero-parallax {
+    height: 220px; /* mais alto que 200px pra não achatar */
+    background-position: center 20%; /* sobe um pouco o foco da imagem */
+    background-size: cover;
+  }
+  .site-header {
+    padding: 0.5rem 0; /* antes .75rem ou 1.5rem */
+  }
+  
+  .site-header .container {
+    padding: 0 1rem; /* reduz espaço interno lateral */
+  }
+  
+}
