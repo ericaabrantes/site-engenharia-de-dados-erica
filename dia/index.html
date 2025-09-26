@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kirabyte Blog</title>
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./blog.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">🌸 Kirabyte Blog</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="#aprendizado">Aprendizado</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#carreira">Carreira</a></li>
+          <li><a href="#lifestyle">Lifestyle</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- Menu Global -->
+<nav class="menu-global">
+    <div class="container">
+      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+      <ul class="menu-links" id="menu-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="posts.html">Posts</a></li> 
+        <li><a href="sobre-blog.html">Sobre o Blog</a></li>
+        <li><a href="cursos.html">Cursos</a></li>
+        <li><a href="guia.html">Guia</a></li>
+        <li><a href="comunidade.html">Comunidade</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container text-center">
+      <h2>Boas-vindas ao Kirabyte 🌸</h2>
+      <p>Um espaço para falar sobre dados, carreira e lifestyle tech.</p>
+    </div>
+  </section>
+
+  <!-- Seção: Posts em Destaque -->
+<section id="destaques" class="blog-destaques">
+    <div class="container">
+      <h2>✨ Posts em Destaque</h2>
+      <div class="destaques-grid">
+        <a href="post-exemplo.html" class="destaque-card">
+          <img src="assets/images/post1.jpg" alt="Post exemplo 1">
+          <h3>Como criei meu primeiro pipeline de dados</h3>
+        </a>
+        <a href="post-exemplo.html" class="destaque-card">
+          <img src="assets/images/post2.jpg" alt="Post exemplo 2">
+          <h3>Entendendo o Apache Airflow</h3>
+        </a>
+        <a href="post-exemplo.html" class="destaque-card">
+          <img src="assets/images/post3.jpg" alt="Post exemplo 3">
+          <h3>Do front-end para a engenharia de dados</h3>
+        </a>
+      </div>
+    </div>
+
+    <section class="blog-categorias">
+        <h2>Categorias</h2>
+        <div class="categorias-grid">
+          <a href="#" class="categoria-badge">
+            <i class="bi bi-database-fill"></i>
+            Engenharia de Dados
+          </a>
+          <a href="#" class="categoria-badge">
+            <i class="bi bi-terminal-fill"></i>
+            Tutoriais Práticos
+          </a>
+          <a href="#" class="categoria-badge">
+            <i class="bi bi-mortarboard-fill"></i>
+            Carreira & Estudos
+          </a>
+          <a href="#" class="categoria-badge">
+            <i class="bi bi-chat-left-quote-fill"></i>
+            Reflexões Pessoais
+          </a>
+        </div>
+      </section>
+      
+
+  
+
+  <!-- Lista de posts -->
+  <main class="container posts">
+    <article class="post">
+      <h3><a href="post.html">🔥 Como usar o BranchPythonOperator no Airflow</a></h3>
+      <p class="meta">Publicado em 07/09/2025 | Categoria: Aprendizado</p>
+      <p>Um guia prático para dominar um dos operadores mais úteis do Airflow...</p>
+      <a href="post.html" class="btn">Ler mais</a>
+    </article>
+
+    <article class="post">
+      <h3><a href="post.html">☕ Dados & Café: aprendizados da semana</a></h3>
+      <p class="meta">Publicado em 01/09/2025 | Categoria: Lifestyle</p>
+      <p>O que café e engenharia de dados têm em comum? Mais do que você imagina...</p>
+      <a href="post.html" class="btn">Ler mais</a>
+    </article>
+  </main>
+
+  <section id="sobre-blog" class="sobre-blog">
+    <div class="container">
+      <h2>Sobre o Blog</h2>
+      <p>
+        O <strong>Kirabyte</strong> nasceu no início como um espaço para praticar front-end e compartilhar pequenos aprendizados. 
+        Com o tempo, se transformou em um lugar para <strong>descomplicar dados</strong> e mostrar minha jornada na Engenharia de Dados.
+      </p>
+      <div class="saiba-mais">
+        <a href="sobre-blog.html" class="btn-saiba-mais">Saiba Mais</a>
+      </div>
+    </div>
+  </section>
+ <!-- Cursos Recomendados -->
+<section id="cursos">
+    <div class="container text-center">
+      <h2>📚 Recursos Recomendados</h2>
+      <p>Alguns cursos e materiais que me ajudaram na jornada de dados.</p>
+  
+      <div class="cursos-grid">
+        <div class="curso-card">
+          <img src="assets/cursos/udemy.png" alt="Udemy" />
+          <h3>Python para Data Engineering</h3>
+          <p>Curso introdutório que me ajudou a consolidar Python no contexto de dados.</p>
+          <a href="https://udemy.com" target="_blank">Ver Curso</a>
+        </div>
+  
+        <div class="curso-card">
+          <img src="assets/cursos/databricks.png" alt="Databricks" />
+          <h3>Databricks Lakehouse Fundamentals</h3>
+          <p>Certificação oficial que explica os conceitos do Lakehouse.</p>
+          <a href="https://academy.databricks.com" target="_blank">Ver Curso</a>
+        </div>
+  
+        <div class="curso-card">
+          <img src="assets/cursos/astronomer.png" alt="Astronomer" />
+          <h3>Airflow Fundamentals</h3>
+          <p>Base sólida em orquestração de dados com Apache Airflow.</p>
+          <a href="https://academy.astronomer.io" target="_blank">Ver Curso</a>
+        </div>
+      </div>
+  
+      <div class="btn-ver-mais">
+        <a href="cursos.html">Ver Todos os Recursos</a>
+      </div>
+    </div>
+  </section>
+<!-- Hall da Comunidade -->
+<section id="comunidade" class="comunidade-teaser">
+    <div class="container text-center">
+      <h2>🌟 Hall da Comunidade</h2>
+      <p>Mensagens, prints e interações que tornam essa jornada ainda mais especial.</p>
+  
+      <div class="comunidade-grid">
+        <div class="comunidade-card">
+          <img src="assets/comunidade/comentario1.jpg" alt="Comentário da comunidade">
+          <span>Comentário no LinkedIn</span>
+        </div>
+        <div class="comunidade-card">
+          <img src="assets/comunidade/comentario2.jpg" alt="Mensagem da comunidade">
+          <span>Mensagem de incentivo</span>
+        </div>
+        <div class="comunidade-card">
+          <img src="assets/comunidade/comentario3.jpg" alt="Print de interação">
+          <span>Interação no desafio</span>
+        </div>
+      </div>
+  
+      <a href="comunidade.html" class="saiba-mais">Ver mais</a>
+    </div>
+  </section>
+<!-- Guia para Iniciantes -->
+<section id="guia" class="guia-teaser">
+    <div class="container text-center">
+      <h2>📖 Guia para Iniciantes em Dados</h2>
+      <p>
+        Começando agora na área de dados? Preparei um guia simples para te orientar nos primeiros passos!
+      </p>
+  
+      <div class="guia-pontos">
+        <div class="ponto">
+          <i class="bi bi-laptop"></i>
+          <h3>Fundamentos</h3>
+          <p>Bancos de dados, SQL, lógica de programação.</p>
+        </div>
+        <div class="ponto">
+          <i class="bi bi-diagram-3"></i>
+          <h3>Engenharia de Dados</h3>
+          <p>Pipelines, ETL/ELT e ferramentas do mercado.</p>
+        </div>
+        <div class="ponto">
+          <i class="bi bi-lightbulb"></i>
+          <h3>Boas Práticas</h3>
+          <p>Versionamento, testes, documentação.</p>
+        </div>
+      </div>
+  
+      <a href="guia.html" class="saiba-mais">Ver Guia Completo</a>
+    </div>
+  </section>
+       
+  <!-- <section id="timeline">
+    <div class="container">
+      <h2>📌 Linha do Tempo</h2>
+      <ul class="timeline-list" id="timeline-list">
+        <!-- Carregado via JS -->
+      </ul>
+    </div>
+  </section> -->
+  <!-- Newsletter -->
+<section id="newsletter" class="newsletter-teaser">
+    <div class="container text-center">
+      <h2>📩 Receba novidades do Kirabyte</h2>
+      <p>Quer acompanhar novos posts, tutoriais e dicas de dados? Cadastre seu email.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Seu melhor email" required>
+        <button type="submit">Quero receber</button>
+      </form>
+      <a href="newsletter.html" class="saiba-mais">Saiba mais</a>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Kirabyte Blog | Criado por Érica Abrantes Ignatios 🌸</p>
+    <p>Visite também: <a href="https://www.ericaignatios.com.br" target="_blank">www.ericaignatios.com.br</a></p>
+  </footer>
+  
+  <script src="script.js"></script>
+  <!-- Bootstrap JS (depende do Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

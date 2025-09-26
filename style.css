@@ -41,6 +41,15 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+
+    /* NOVO: Efeito de zoom sutil ao carregar */
+    transform: scale(1.05); /* Começa um pouco maior */
+    animation: gentleZoom 30s infinite alternate forwards;
+  }
+  
+  @keyframes gentleZoom {
+    0% { transform: scale(1.05); }
+    100% { transform: scale(1.0); }
 }
 
 .hero-overlay {
@@ -170,6 +179,94 @@ section h2 {
   margin-bottom: 0.5rem;
 }
 
+/* ==================================== */
+/* ===== 2. Certificações CSS ===== */
+/* ==================================== */
+
+#certificacoes {
+  /* Substitua o background-color */
+  background: linear-gradient(135deg, var(--azul-suave), var(--roxo-suave));
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+#certificacoes h2 {
+  margin-bottom: 2.5rem;
+}
+
+.certificacoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.certificado-card {
+  background-color: var(--branco); /* mantém branco */
+  padding: 1.5rem;
+  border-radius: 12px;
+  /* Aumenta a sombra para destacar mais */
+  box-shadow: 0 4px 15px rgba(126, 87, 194, 0.2); /* Usa cor roxa na sombra */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.certificado-card:hover {
+  transform: translateY(-8px);
+  /* Sombra mais forte no hover */
+  box-shadow: 0 10px 25px rgba(126, 87, 194, 0.3); 
+}
+
+.certificado-card h3 {
+  color: var(--roxo-escuro);
+  font-size: 1.25rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.data-certificado {
+  color: var(--preto-suave);
+  opacity: 0.7;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+  flex-grow: 1; /* Garante que o botão fique na parte inferior */
+}
+
+.btn-certificado {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  /* Troca a cor para o roxo escuro */
+  background-color: var(--roxo-escuro); /* #7e57c2 */
+  color: var(--branco);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+.btn-certificado:hover {
+  /* No hover, usa o seu azul profundo ou outro tom do roxo/azul */
+  background-color: var(--azul-profundo); /* #d48ea6 */
+}
+
+.btn-certificado.btn-disabled {
+    background-color: #ccc;
+    cursor: default;
+    opacity: 0.6;
+}
+
+.btn-certificado.btn-disabled:hover {
+    background-color: #ccc;
+}
+
+.badge-img {
+  width: 80px;  /* Tamanho ideal para o badge no card */
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
 .sobre-texto h2{
   color: #a0d4f8;
 }
@@ -236,6 +333,14 @@ section h2 {
   margin-top: 2rem;
 }
 
+/* Os estilos para .desafio-grid provavelmente já estão ok */
+.desafio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
 .desafio-card {
   display: flex;
   flex-direction: column;
@@ -243,8 +348,9 @@ section h2 {
   background: var(--branco);
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  overflow: hidden;
+  overflow: hidden; /* IMPORTANTE: Esconde o que excede o contêiner */
   transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%; /* Garante que todos os cards tenham a mesma altura */
 }
 
 .desafio-card:hover {
@@ -253,9 +359,11 @@ section h2 {
 }
 
 .desafio-card img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  width: 100%; /* A imagem sempre ocupará 100% da largura do card */
+  height: 180px; /* **NOVO:** Define uma altura fixa para todas as imagens */
+  object-fit: cover; /* **NOVO:** Corta a imagem para preencher o espaço, mantendo a proporção */
+  object-position: center top; /* **NOVO:** Foca o corte na parte superior da imagem, útil para fotos de tela */
+  display: block; /* Remove possíveis espaços extras abaixo da imagem */
 }
 
 .desafio-card span {
@@ -263,6 +371,11 @@ section h2 {
   padding: 0.75rem;
   font-weight: 600;
   color: var(--roxo-escuro);
+  /* Adicione estas propriedades para que o span use o espaço restante */
+  flex-grow: 1; /* Permite que o span cresça e ocupe o espaço disponível */
+  display: flex; /* Transforma em flex para centralizar o texto verticalmente */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
 }
 .parallax-contato {
   /* background-image: url('assets/WhatsApp Image 2025-09-05 at 15.13.16.jpeg'); ajuste o caminho se necessário */
