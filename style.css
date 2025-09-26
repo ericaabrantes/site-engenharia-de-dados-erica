@@ -317,6 +317,7 @@ section h2 {
 .jornada{
 background: linear-gradient(135deg, var(--roxo-suave), var(--roxo-escuro));
 font-family: "Sansita", sans-serif;
+text-align: center;
 }
 #video-destaque {
   /* Novo Fundo Degradê: do seu roxo-escuro para o azul-profundo */
@@ -385,6 +386,7 @@ font-family: "Sansita", sans-serif;
   overflow: hidden; /* IMPORTANTE: Esconde o que excede o contêiner */
   transition: transform 0.3s, box-shadow 0.3s;
   height: 100%; /* Garante que todos os cards tenham a mesma altura */
+  font-family: sansita;
 }
 
 .desafio-card:hover {
@@ -677,6 +679,7 @@ footer {
   margin: 3rem auto;
   list-style: none; /* Remove as bolinhas padrão do <ul> */
   padding-left: 0;
+
 }
 
 /* 1. Linha vertical central */
@@ -714,7 +717,7 @@ footer {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
-  font-family: var(--fonte); /* Volta para a fonte principal */
+  font-family: poppins;
 }
 
 .conteudo-timeline:hover {
@@ -834,3 +837,87 @@ footer {
   margin-right: 0.5rem;
   font-size: 1.2rem;
 }
+/* ==================================== */
+/* ===== TIMELINE SCROLL EFFECT CSS ===== */
+/* ==================================== */
+
+/* Faz o dot ficar colorido e o card ativo */
+.timeline-item.timeline-active .timeline-dot {
+  background-color: var(--azul-profundo); /* Cor de destaque quando ativo */
+  border-color: var(--roxo-escuro); /* Borda mais escura */
+  transform: scale(1.1); /* Anima um pouco a bolinha */
+  transition: all 0.5s ease;
+}
+
+.timeline-item.timeline-active .conteudo-timeline {
+  border-left: 5px solid var(--azul-profundo); /* Linha vertical colorida no card ativo */
+  box-shadow: 0 8px 20px rgba(126, 87, 194, 0.4); /* Sombra mais forte para destaque */
+}
+
+/* Opcional: Efeito na linha central (mais complexo, mas dá para simular) */
+/* Isso requer um ajuste mais avançado que pode ser feito no CSS puro, mas o efeito acima já dará a sensação de movimento! */
+
+/* Localize e substitua o bloco .sobre-container no seu style.css: */
+.sobre-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  
+  /* Mantém seu degradê */
+  background: linear-gradient(90deg, var(--roxo-escuro) 0%, var(--azul-suave) 100%); 
+  
+  border-radius: 15px;
+  padding: 3rem; /* Aumenta um pouco o padding interno */
+  color: var(--branco); /* Garante que o texto seja branco para melhor leitura */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra mais forte para destacar */
+}
+
+/* Garante que o texto seja fácil de ler */
+.sobre-texto h2{
+  color: var(--roxo-suave); /* Título em cor clara para contraste */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Faz a imagem se misturar melhor com o fundo */
+.sobre-foto img {
+  /* ... estilos existentes ... */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4); /* Sombra mais intensa */
+  border: 3px solid var(--roxo-suave); /* Borda sutil de destaque */
+}
+
+/* Localize e substitua o bloco footer no seu style.css: */
+footer {
+  /* Seu degradê existente */
+  background: linear-gradient(90deg,  #b297e1 0%, #7e57c2   100%);
+  text-align: center;
+  padding: 1.5rem 0; /* Aumenta o padding */
+  font-size: 1rem; /* Aumenta o tamanho da fonte */
+  color: var(--branco); /* Garante que o texto seja branco */
+}
+
+footer p {
+  margin: 0.25rem 0; /* Reduz o espaçamento entre as linhas do footer */
+  color: var(--cinza-branco); /* Cor suave para as letras */
+}
+/* ==================================== */
+/* ===== TIMELINE DA JORNADA (ESTÉTICA FINAL) ===== */
+/* ==================================== */
+#jornada {
+  /* NOVO: Fundo degradê para destacar a seção */
+  background: linear-gradient(135deg, var(--roxo-suave) 0%, var(--azul-suave) 100%);
+  padding: 6rem 2rem;
+  
+  /* NOVO: Centraliza todo o conteúdo da seção */
+  text-align: center; 
+}
+
+#jornada h2 {
+  /* Mantém os estilos de fonte, mas o text-align: center; da seção já deve resolver */
+  font-family: 'Sansita', sans-serif;
+  font-weight: 800;
+  text-transform: none;
+  letter-spacing: normal;
+}
+/* ... o resto do CSS da timeline é mantido ... */
