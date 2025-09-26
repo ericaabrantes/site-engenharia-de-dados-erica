@@ -85,3 +85,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// ====================================
+// ===== CÓDIGO PARA SCROLL REVEAL (FADE-IN-SECTION) =====
+// ====================================
+
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.1 // Ativa quando 10% da seção está visível
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+      if (entry.isIntersecting) {
+          // Adiciona a classe que faz a animação no CSS
+          entry.target.classList.add('is-visible'); 
+          // Para de observar depois que a seção aparece
+          observer.unobserve(entry.target); 
+      }
+  });
+}, observerOptions);
+
+// Observa todas as seções que têm a classe 'fade-in-section'
+document.querySelectorAll('.fade-in-section').forEach(section => {
+  observer.observe(section);
+});
+// ====================================

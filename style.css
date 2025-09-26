@@ -139,7 +139,12 @@ section h2 {
   justify-content: center;
   margin-top: 2rem;
 }
-
+.skill-h2{
+  font-family: sansita;
+  font-size: 2.5rem; /* Um pouco maior para destaque */
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Sombra no texto do título */
+}
 .skill {
   background-color: var(--azul-suave);
   border-radius: 10px;
@@ -191,7 +196,10 @@ section h2 {
 }
 
 #certificacoes h2 {
-  margin-bottom: 2.5rem;
+  font-family: sansita;
+  font-size: 2.5rem; /* Um pouco maior para destaque */
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Sombra no texto do título */
 }
 
 .certificacoes-grid {
@@ -305,10 +313,36 @@ section h2 {
   transform: rotateY(10deg) rotateX(5deg) scale(1.05);
   box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }
+
+.jornada{
+background: linear-gradient(135deg, var(--roxo-suave), var(--roxo-escuro));
+font-family: "Sansita", sans-serif;
+}
 #video-destaque {
-  background-color: var(--azul-suave); /* mesmo fundo da sessão YouTube */
-  padding: 4rem 2rem;
+  /* Novo Fundo Degradê: do seu roxo-escuro para o azul-profundo */
+  background: linear-gradient(135deg, var(--roxo-escuro) 0%, var(--azul-profundo) 100%);
+  padding: 6rem 2rem; /* Aumenta o padding para dar mais "respiro" */
   text-align: center;
+  color: var(--branco); /* Ajusta a cor do texto para branco para contraste */
+  box-shadow: inset 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra interna sutil */
+}
+
+/* Também vamos ajustar a cor do h2 dentro dessa seção para ter um contraste ainda melhor */
+#video-destaque h2 {
+    font-family: sansita;
+    color: var(--branco); /* Título branco */
+    font-size: 2.5rem; /* Um pouco maior para destaque */
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Sombra no texto do título */
+}
+
+/* E o parágrafo logo abaixo do h2 */
+#video-destaque p {
+    color: var(--cinza-branco); /* Cor mais clara para o parágrafo */
+    max-width: 700px; /* Limita a largura para melhor leitura */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem; /* Mais espaço antes do vídeo */
 }
 
 #youtube {
@@ -620,4 +654,183 @@ footer {
   }
   
   
+}
+/* ==================================== */
+/* ===== TIMELINE DA JORNADA (ESTÉTICA FINAL) ===== */
+/* ==================================== */
+#jornada {
+  background: linear-gradient(135deg, var(--azul-suave), var(--roxo-suave)); /* Fundo claro para contraste */
+  padding: 6rem 2rem;
+}
+
+#jornada h2 {
+  /* Define a fonte Sansita apenas para a seção Jornada */
+  font-family: 'Sansita', sans-serif;
+  font-weight: 800;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 3rem auto;
+  list-style: none; /* Remove as bolinhas padrão do <ul> */
+  padding-left: 0;
+}
+
+/* 1. Linha vertical central */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background: var(--roxo-escuro); /* Cor roxa da linha */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+}
+
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+  margin-bottom: 2.5rem; /* Mais espaço entre os cards */
+}
+
+/* Posicionamento dos cards (alternando lados) */
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+.timeline-item:nth-child(odd) {
+  left: 0;
+}
+
+/* 2. Conteúdo do Card (Fundo Branco + Efeito) */
+.conteudo-timeline {
+  background-color: var(--branco);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  font-family: var(--fonte); /* Volta para a fonte principal */
+}
+
+.conteudo-timeline:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(126, 87, 194, 0.3);
+}
+
+.conteudo-timeline h3 {
+  color: var(--roxo-escuro);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.conteudo-timeline h3 i {
+  font-size: 1.5rem;
+  margin-right: 0.75rem;
+  color: var(--azul-profundo); /* Cor de destaque para os ícones */
+}
+
+/* 3. Bolinhas de Destaque (Dots) */
+.timeline-dot {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: var(--roxo-escuro);
+  border: 4px solid var(--cinza-branco);
+  top: 35px;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+/* Posição da bolinha */
+.timeline-item:nth-child(odd) .timeline-dot {
+  right: -10px; 
+}
+.timeline-item:nth-child(even) .timeline-dot {
+  left: -10px;
+}
+
+/* Estilos de ícones antigos (remover para não conflitar) */
+.timeline li:nth-child(1) h3 i,
+.timeline li:nth-child(2) h3 i,
+.timeline li:nth-child(3) h3 i,
+.timeline li:nth-child(4) h3 i,
+.timeline li:nth-child(5) h3 i { 
+  /* REMOVER ESTE TRECHO SE EXISTIR NO SEU CSS: 
+     Isso permite que a cor do ícone seja controlada por .conteudo-timeline h3 i
+  */
+}
+
+
+/* Estilo para Mobile (Timeline de Coluna Única) */
+@media screen and (max-width: 768px) {
+  .timeline::after {
+      left: 20px;
+  }
+
+  .timeline-item {
+      width: 100%;
+      padding-left: 50px;
+      padding-right: 15px;
+      left: 0 !important;
+  }
+
+  .timeline-dot {
+      left: 14px !important;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-dot {
+      right: auto;
+  }
+}
+#conteudo{
+  background: linear-gradient(135deg, var(--azul-suave) 0%, var(--azul-profundo) 100%);
+}
+#conteudo h2{
+  font-family: sansita;
+  color: var(--branco); /* Título branco */
+  font-size: 2.5rem; /* Um pouco maior para destaque */
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Sombra no texto do título */
+}
+/* ==================================== */
+/* ===== BOTÃO BLOG DE DESTAQUE ===== */
+/* ==================================== */
+.btn-blog-destaque {
+  display: inline-block;
+  /* Tamanho e espaçamento */
+  margin-top: 3rem; 
+  padding: 1rem 2.5rem;
+  
+  /* Cores e estilos */
+  background-color: var(--roxo-escuro); /* Cor primária */
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: 700;
+  font-family: sansita;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  
+  /* Efeito e transição */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-blog-destaque:hover {
+  background-color: var(--azul-profundo); /* Cor de destaque no hover */
+  transform: translateY(-2px); /* Efeito de elevação */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-blog-destaque i {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
 }

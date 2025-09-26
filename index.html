@@ -31,6 +31,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
     <script type="module" src="/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
   </head>
   
@@ -54,6 +58,13 @@
           <li><a href="#projetos">Projetos</a></li>
           <li><a href="#conteudo">Conteúdo</a></li>
           <li><a href="#contato">Contato</a></li>
+          <li>
+            <a href="https://www.kirabyte.com.br" 
+               target="_blank" 
+               rel="noopener noreferrer">
+              Blog
+            </a>
+          </li>
         </ul>
       </nav>      
     </div>
@@ -85,7 +96,7 @@
 <!-- Skills / Tecnologias -->
 <section id="skills">
   <div class="container text-center">
-    <h2>Skills & Tecnologias</h2>
+    <h2 class="skill-h2">Skills & Tecnologias</h2>
     <div class="skills-grid">
       <div class="skill"><span class="iconify" data-icon="logos:python" data-width="40" data-height="40"></span> Python</div>
       <div class="skill"><span class="iconify" data-icon="logos:mysql" data-width="40" data-height="40"></span> MySQL</div>
@@ -186,43 +197,53 @@
     </div>
   </section>
   
-  <section id="jornada" class="fade-in">
-    <div class="container">
-      <h2>Minha Jornada</h2>
-      <ul class="timeline">
-        <li>
-          <div class="conteudo-timeline">
-            <h3><i class="bi bi-lightning-fill"></i> Migrei de Front-end para Dados</h3>
-            <p>Foi o início da minha transformação na carreira, quando decidi abraçar a área de dados.</p>
-          </div>
-        </li>
-        <li>
-          <div class="conteudo-timeline">
-            <h3><i class="bi bi-code-slash"></i> Primeira automação com Python</h3>
-            <p>Descobri o poder do código para simplificar processos repetitivos.</p>
-          </div>
-        </li>
-        <li>
-          <div class="conteudo-timeline">
-            <h3><i class="bi bi-diagram-3-fill"></i> Primeiro projeto com Databricks</h3>
-            <p>Aprendi sobre pipelines, Delta Lake e o poder dos dados em escala.</p>
-          </div>
-        </li>
-        <li>
-          <div class="conteudo-timeline">
-            <h3><i class="bi bi-pencil-fill"></i> Criação do blog Kirabyte</h3>
-            <p>Minha jornada de compartilhar conhecimento e inspirar a comunidade.</p>
-          </div>
-        </li>
-        <li>
-          <div class="conteudo-timeline">
-            <h3><i class="bi bi-bar-chart-line-fill"></i> Iniciei o desafio 30 Dias de Dados</h3>
-            <p>Um compromisso para crescer e mostrar meu aprendizado diário.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
+  <section id="jornada"> <div class="container">
+    <h2>Minha Jornada</h2>
+    <ul class="timeline">
+      
+      <li class="timeline-item"> 
+        <div class="timeline-dot"></div>
+        <div class="conteudo-timeline">
+          <h3><i class="bi bi-lightning-fill"></i> Migrei de Front-end para Dados</h3>
+          <p>Foi o início da minha transformação na carreira, quando decidi abraçar a área de dados.</p>
+        </div>
+      </li>
+      
+      <li class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="conteudo-timeline">
+          <h3><i class="bi bi-code-slash"></i> Primeira automação com Python</h3>
+          <p>Descobri o poder do código para simplificar processos repetitivos.</p>
+        </div>
+      </li>
+      
+      <li class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="conteudo-timeline">
+          <h3><i class="bi bi-diagram-3-fill"></i> Primeiro projeto com Databricks</h3>
+          <p>Aprendi sobre pipelines, Delta Lake e o poder dos dados em escala.</p>
+        </div>
+      </li>
+      
+      <li class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="conteudo-timeline">
+          <h3><i class="bi bi-pencil-fill"></i> Criação do blog Kirabyte</h3>
+          <p>Minha jornada de compartilhar conhecimento e inspirar a comunidade.</p>
+        </div>
+      </li>
+      
+      <li class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="conteudo-timeline">
+          <h3><i class="bi bi-bar-chart-line-fill"></i> Iniciei o desafio 30 Dias de Dados</h3>
+          <p>Um compromisso para crescer e mostrar meu aprendizado diário.</p>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
   
   
 
@@ -401,6 +422,13 @@
           <span>Dia 30</span>
         </a>
       </div>
+
+      <a href="https://www.kirabyte.com.br/desafio-airflow.html" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="btn-blog-destaque">
+     <i class="bi bi-book-fill"></i> Acessar o Blog (Desafio Airflow)
+   </a>
     </div>
   </section>
   
