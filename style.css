@@ -35,7 +35,7 @@ header {
 }
 .hero-parallax {
   height: 350px;
-  background-image: url('assets/WhatsApp Image 2025-09-05 at 15.13.16.jpeg'); /* ajuste o caminho */
+  background-image: url('assets/WhatsApp Image 2025-09-05 at 15.13.16.jpeg'); 
   /* background-attachment: fixed; */
   background-position: center;
   background-repeat: no-repeat;
@@ -920,4 +920,98 @@ footer p {
   text-transform: none;
   letter-spacing: normal;
 }
-/* ... o resto do CSS da timeline é mantido ... */
+/* ==================================== */
+/* ===== SESSÃO LOJA / SERVIÇOS ===== */
+/* ==================================== */
+
+.loja-section {
+  background-color: var(--cinza-branco);
+  padding: 6rem 2rem;
+}
+
+.loja-section h2 {
+  font-family: sansita;
+  font-size: 2.5rem;
+  color: var(--roxo-escuro);
+  margin-bottom: 1rem;
+}
+
+.loja-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.loja-card {
+  background: var(--branco);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.02);
+}
+
+.loja-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(126, 87, 194, 0.15);
+  border-color: var(--roxo-suave);
+}
+
+.icon-loja {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: var(--azul-suave);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(160, 212, 248, 0.4);
+}
+
+.loja-card h3 {
+  color: var(--roxo-escuro);
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.loja-card p {
+  color: var(--preto-suave);
+  margin-bottom: 1.5rem;
+  flex-grow: 1; /* Empurra o botão para baixo */
+}
+
+.btn-loja {
+  padding: 0.8rem 1.5rem;
+  background-color: var(--roxo-escuro);
+  color: var(--branco);
+  text-decoration: none;
+  border-radius: 50px; /* Botão mais arredondado */
+  font-weight: bold;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-loja:hover {
+  background-color: var(--azul-profundo);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(212, 142, 166, 0.4);
+}
+
+/* Botão especial para o 'café' ou destaque */
+.btn-loja.btn-destaque {
+  background: linear-gradient(90deg, var(--roxo-escuro), var(--azul-profundo));
+}
+
+.btn-loja.btn-disabled {
+  background-color: #e0e0e0;
+  color: #999;
+  pointer-events: none;
+  cursor: default;
+}
