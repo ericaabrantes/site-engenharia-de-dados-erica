@@ -201,3 +201,95 @@ document.addEventListener("DOMContentLoaded", async () => {
     videoContainer.innerHTML = "<p>Não foi possível carregar o vídeo.</p>";
   }
 });
+
+// ==========================================================
+// 5. ESTATÍSTICAS SOCIAIS (API + ANIMAÇÃO)
+// ==========================================================
+document.addEventListener("DOMContentLoaded", async () => {
+  
+  // --- CONFIGURAÇÕES ---
+  const ytChannelId = "UCfbF-WRAt6paMIo-ZUDZtOA";
+  const apiKey = "AIzaSyAFsK5QnNk0Qw1g7QfFkeJSg2BgX1qxqqM"; 
+  const githubUser = "ericaabrantes"; 
+
+  // Elementos do DOM
+  const ytElement = document.getElementById("yt-subs");
+  const ghElement = document.getElementById("gh-followers");
+  
+  // Função para formatar números (ex: 1500 vira 1.5k ou 1.500)
+  const formatNumber = (num) => {
+    return new Intl.NumberFormat('pt-BR').format(num);
+  };
+
+  // Função de Animação de Contagem
+  const animateValue = (obj, start, end, duration) => {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      
+      // Cálculo do valor atual
+      const currentVal = Math.floor(progress * (end - start) + start);
+      
+      // Atualiza o texto formatado
+      obj.innerHTML = formatNumber(currentVal);
+      
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        // Garante que o número final seja exato e adiciona um "+" se for manual
+        obj.innerHTML = formatNumber(end) + (obj.classList.contains('counter') ? "+" : "");
+      }
+    };
+    window.requestAnimationFrame(step);
+  };
+
+  // 1. Buscar Inscritos YouTube (Automático)
+  if (ytElement) {
+    try {
+      const url = `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${ytChannelId}&key=${apiKey}`;
+      const resp = await fetch(url);
+      const data = await resp.json();
+      const subs = parseInt(data.items[0].statistics.subscriberCount);
+      
+      // Anima do 0 até o valor real
+      animateValue(ytElement, 0, subs, 2000);
+    } catch (e) {
+      console.error("Erro YT Stats:", e);
+      ytElement.innerText = "---";
+    }
+  }
+
+  // 2. Buscar Seguidores GitHub (Automático)
+  if (ghElement) {
+    try {
+      const url = `https://api.github.com/users/${githubUser}`;
+      const resp = await fetch(url);
+      const data = await resp.json();
+      const followers = data.followers;
+      
+      // Anima do 0 até o valor real
+      animateValue(ghElement, 0, followers, 2000);
+    } catch (e) {
+      console.error("Erro GitHub Stats:", e);
+      ghElement.innerText = "---";
+    }
+  }
+
+  // 3. Animar os Manuais (LinkedIn e Instagram)
+  // Eles usam a classe .counter e o atributo data-target no HTML
+  const counters = document.querySelectorAll('.counter');
+  
+  // Usamos o IntersectionObserver para só animar quando a pessoa rolar a tela até lá
+  const observerStats = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const target = parseInt(entry.target.getAttribute('data-target'));
+        animateValue(entry.target, 0, target, 2000); // 2000ms = 2 segundos de animação
+        observerStats.unobserve(entry.target); // Para de observar depois que animou
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(counter => observerStats.observe(counter));
+});

@@ -1015,3 +1015,58 @@ footer p {
   pointer-events: none;
   cursor: default;
 }
+
+/* ==================================== */
+/* ===== ESTATÍSTICAS SOCIAIS ===== */
+/* ==================================== */
+.stats-section {
+  background-color: var(--branco);
+  background-color: var(--roxo-escuro);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 4rem 2rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--cinza-branco);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(126, 87, 194, 0.15);
+}
+
+.stat-card i {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.stat-card h3 {
+  font-family: sansita;
+  font-size: 2.5rem;
+  color: var(--roxo-escuro);
+  margin: 0.5rem 0;
+}
+
+.stat-card p {
+  color: var(--preto-suave);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
